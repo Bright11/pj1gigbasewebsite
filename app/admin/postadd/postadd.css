@@ -1,0 +1,44 @@
+.admintable{
+    margin: 0px 10px;
+}
+.addserviceform{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  background-color: white;
+    width: 80%;
+    margin: 0px auto;
+    box-shadow: var(--box-shadow);
+    padding: 0px 10px;
+}
+
+.addserviceform div{
+    width: 100%;
+    border:0.6px solid lightgrey;
+    margin-bottom: 8px;
+}
+.addserviceform div input,textarea,select{
+    width: 100%;
+    background-color: black;
+    padding: 8px;
+    outline: none;
+    resize: none;
+    color: white;
+}
+.addserviceform select option{
+    border-bottom: 0.5 solid lightgray;
+   text-align: center;
+   margin: 5px 0px;
+}
+.addserviceform div label{
+    font-size: 12px;
+    font-weight: 300;
+}
+.addserviceform div button{
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+}
+

@@ -1,0 +1,8 @@
+.adminsidebarui{
+    margin: 0px 10px;
+}
+.adminsidebarui li{
+    padding: 8px;
+    border-bottom: 0.5px solid  var(--black-color) !important;
+    margin: 8px 0px;
+}

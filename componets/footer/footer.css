@@ -1,0 +1,66 @@
+.fooetr{
+    background-color: #010425;
+}
+.footercontainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.socialiconsdiv{
+    display: flex;
+    align-items: center;
+}
+.footerimg_div{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.footerimg_div img{
+    width: 100%;
+    height: 100%;
+}
+.logoffootercontainer h1{
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: "RobotoBlack";
+}
+.socialiconsdiv a{
+    margin: 0px 8px;
+    font-family: "RobotoBlack";
+}
+.footerul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footerul li{
+    margin: 5px 0px;
+    padding: 4px;
+}
+.footerul li a{
+    color: white;
+    font-family: "RobotoBlack";
+}
+.neslatters {
+    width: 320px;
+    background-color: lightgrey;
+}
+.neslatters input{
+   width: 75%;
+    padding: 5px;
+    outline: none;
+    font-family: "RobotoBlack";
+}
+.neslatters button{
+    width: 25%;
+}
+
+.copyright{
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}

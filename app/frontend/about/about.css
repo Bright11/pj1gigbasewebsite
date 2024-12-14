@@ -1,0 +1,19 @@
+.navbar{
+    background-color: #010425;
+}
+.about{
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 10px 20px;
+}
+
+.about h1{
+    font-family:"RobotoBlack";
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 20px;
+}
+.about p{
+    font-family:"RobotoBlack";
+}

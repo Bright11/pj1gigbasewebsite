@@ -1,0 +1,107 @@
+/* Container styles */
+.logincontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Subtle background */
+    padding: 20px;
+}
+
+/* Form styles */
+.logincontainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0px 7px 30px -20px rgba(0, 0, 0, 0.2); /* Lighter shadow */
+    border-radius: 10px;
+    background-color: #fff; /* White background */
+}
+
+/* Logo styles */
+.logologo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Input and select styles */
+.logincontainer form input,
+.logincontainer form select {
+    width: 100%;
+    margin: 10px 0px;
+    background: #e8f0fe;
+    padding: 12px;
+    border: 1px solid #ccc; /* Add border for better visibility */
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.logincontainer form input:focus,
+.logincontainer form select:focus {
+    border-color: #0070f3; /* Highlighted border */
+    background: #eef6ff;
+    box-shadow: 0px 0px 4px rgba(0, 112, 243, 0.4);
+}
+
+/* Button styles */
+.logincontainer form button {
+    background-color: #b5862d;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    color: black;
+    margin: 10px 0px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.logincontainer form button:hover {
+    background-color: #d4a343;
+    color: white;
+}
+
+.logincontainer form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}
+
+/* Error message */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -5px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Success message */
+.success {
+    color: green;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .logincontainer form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .logologo {
+        width: 80px;
+        height: 80px;
+    }
+}

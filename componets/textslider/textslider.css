@@ -1,0 +1,42 @@
+.slider-container {
+    overflow: hidden;
+    width: 100%; /* Adjust the width as needed */
+    background: #f3f3f3;
+    border: 1px solid #ccc;
+    position: relative;
+    
+  }
+  
+  .text-slider {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll linear infinite;
+    animation-duration: var(--animation-duration, 20s); /* Default duration */
+    width:100%;
+  }
+  
+  .text-slider span {
+    margin: 0 2rem;
+    font-size: 1.2rem;
+    color: #333;
+    font-family: "RobotoBlack";
+  }
+  .speed-control label{
+    font-family: "RobotoBlack";
+  }
+  @keyframes scroll {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .speed-control {
+    margin-top: 1rem;
+    text-align: center;
+  }
+.speed-control{
+    display:none;
+}  

@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors */
+  --background-color: #EBF2F7;
+  --foreground-color: #171717;
+  --link-color: white; /* Hex code for black for clarity */
+  --black-color: #010425;
+  --white-color: #ffffff;
+  --primary-color: #d4a343;
+  /* #F3B640 */
+
+  /* Typography */
+  --font-color-primary: var(--foreground-color);
+  --font-color-secondary: #555555; /* Example secondary text color */
+
+  /* Shadows */
+  --box-shadow: 0px 7px 30px -20px;
+
+  /* Spacing */
+  --spacing-sm: 0.7rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+
+  /* Border */
+  --border-radius: 8px;
+
+  /* Transition */
+  --transition-duration: 0.3s;
+}
+
+html,body{
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  overflow-x:hidden !important;
+  
+}
+.localFont{
+  font-family: 'Poppins', sans-serif;
+}
+
+.RobotoBlack{
+  font-family:var(--roboto-Black)
+}
+
