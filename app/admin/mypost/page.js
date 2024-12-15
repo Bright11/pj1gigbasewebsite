@@ -21,36 +21,40 @@ export default function Mypost() {
     const[post,setPost]=useState([])
 
 
-    useEffect(() => {
-    
-        if (user?.uid) {
-            fetchPosts();
-        }
-        
-    });
+   
     
         
-const fetchPosts = () => {
-    setIsloading(true);
-    try {
+    const fetchPosts = () => {
+      setIsloading(true);
       const q1 = query(collection(db, "post"), where("userId", "==", user?.uid));
-      const unsubscribe = onSnapshot(q1, (querySnapshot1) => {
-        const searchResults = [];
-        querySnapshot1.forEach((doc) => {
-          searchResults.push({ id: doc.id, ...doc.data() });
-        });
-        setPost(searchResults);
-        setIsloading(false);
-      });
-      
-      // Cleanup listener on component unmount
-      return () => unsubscribe();
-    } catch (error) {
-     
-        setIsloading(false);
-    }
-  };
- 
+    
+      const unsubscribe = onSnapshot(
+        q1,
+        (querySnapshot1) => {
+          const searchResults = [];
+          querySnapshot1.forEach((doc) => {
+            searchResults.push({ id: doc.id, ...doc.data() });
+          });
+          setPost(searchResults);
+          setIsloading(false);
+        },
+        (error) => {
+          console.error("Error fetching posts:", error);
+          setIsloading(false);
+        }
+      );
+    
+      // Return the unsubscribe function
+      return unsubscribe;
+    };
+    
+    useEffect(() => {
+      if (user?.uid) {
+        const unsubscribe = fetchPosts();
+        return () => unsubscribe();
+      }
+    }, [user?.uid]);
+    
     
       if(isloading)return<div><p>Loading</p></div>
 

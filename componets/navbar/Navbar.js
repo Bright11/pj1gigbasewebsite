@@ -47,7 +47,7 @@ const logouuser=async()=>{
             :
             <>
             <Link href="#" onClick={logouuser}>Logout</Link>
-            <Link href="/frontend/help">Help</Link>
+            {/* <Link href="/frontend/help">Help</Link> */}
 
             </>
             }

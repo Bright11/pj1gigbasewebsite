@@ -19,31 +19,41 @@ export default function Mylikes() {
     const [post, setPost] = useState([]);
 
 
-    useEffect(() => {
-      userdata();
-    });
     
-    const userdata = async () => {
-      setIsloading(true);
-      try {
-          const q1 = query(collection(db, "savedpost"), where("myId", "==", user?.uid));
-          const querySnapshot1 = await getDocs(q1);
-          const searchResults = querySnapshot1.docs.map(doc => ({
-              id: doc.id,
-              ...doc.data()
-          }));
-          setPost(searchResults);
-      } catch (error) {
-          console.error("Error fetching posts:", error);
-      } finally {
-          setIsloading(false);
-      }
-  };
-  
-
    
     // Fetch posts using the provided fetchPosts function
- 
+    const userdata = async () => {
+        setIsloading(true);
+      
+        try {
+          if (!user?.uid) return;
+      
+          const q1 = query(
+            collection(db, "savedpost"),
+            where("myId", "==", user?.uid)
+          );
+          const querySnapshot1 = await getDocs(q1);
+      
+          const searchResults = querySnapshot1.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+      
+          setPost(searchResults);
+        } catch (error) {
+          console.error("Error fetching posts:", error);
+          // Optionally, set an error state here for user feedback.
+        } finally {
+          setIsloading(false);
+        }
+      };
+      
+      useEffect(() => {
+        if (user?.uid) {
+          userdata();
+        }
+      }, [user?.uid]);
+      
     
   
 
