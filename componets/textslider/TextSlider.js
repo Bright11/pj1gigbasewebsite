@@ -56,7 +56,7 @@ const TextSlider = () => {
       <div className="text-slider" ref={sliderRef}>
       {news.map((item, index) => (
          
-         <span>{item?.name}</span>
+         <span key={item?.id}>{item?.name}</span>
         
        ))}
        

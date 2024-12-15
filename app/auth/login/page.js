@@ -101,8 +101,8 @@ function Login() {
         {error && <p className="error">{error}</p>}
       </form>
       <p>
-        Don't have an account? <Link href="/auth/register">Register</Link>
-      </p>
+  Don&apos;t have an account? <Link href="/auth/register">Register</Link>
+</p>
     </div>
   );
 }

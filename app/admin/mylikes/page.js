@@ -21,7 +21,7 @@ export default function Mylikes() {
 
     useEffect(() => {
       userdata();
-    },[]);
+    });
     
     const userdata = async () => {
       setIsloading(true);

@@ -22,32 +22,36 @@ export default function Mypost() {
 
 
     useEffect(() => {
-      if (user?.uid) {
-       return ()=> fetchPosts();
-      }
-    }, [user?.uid]);
     
-    const fetchPosts = () => {
-        setIsloading(true);
-        try {
-          const q1 = query(collection(db, "post"), where("userId", "==", user?.uid));
-          const unsubscribe = onSnapshot(q1, (querySnapshot1) => {
-            const searchResults = [];
-            querySnapshot1.forEach((doc) => {
-              searchResults.push({ id: doc.id, ...doc.data() });
-            });
-            setPost(searchResults);
-            setIsloading(false);
-          });
-          
-          // Cleanup listener on component unmount
-          return () => unsubscribe();
-        } catch (error) {
-         
-            setIsloading(false);
+        if (user?.uid) {
+            fetchPosts();
         }
-      };
+        
+    });
+    
+        
+const fetchPosts = () => {
+    setIsloading(true);
+    try {
+      const q1 = query(collection(db, "post"), where("userId", "==", user?.uid));
+      const unsubscribe = onSnapshot(q1, (querySnapshot1) => {
+        const searchResults = [];
+        querySnapshot1.forEach((doc) => {
+          searchResults.push({ id: doc.id, ...doc.data() });
+        });
+        setPost(searchResults);
+        setIsloading(false);
+      });
+      
+      // Cleanup listener on component unmount
+      return () => unsubscribe();
+    } catch (error) {
      
+        setIsloading(false);
+    }
+  };
+ 
+    
       if(isloading)return<div><p>Loading</p></div>
 
       const deletpost=async(item)=>{

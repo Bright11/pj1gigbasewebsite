@@ -8,7 +8,10 @@ export const Userinfo = () => {
     const userData = localStorage.getItem("user");
     if (userData) {
         setUserinfo(JSON.parse(userData));
+    }else{
+      setUserinfo(null)
     }
+    
   }, []);
 
   return userinfo;

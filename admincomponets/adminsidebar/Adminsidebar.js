@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import './adminsidebar.css'
 import { useEffect } from 'react';
+import UseSecureAuth from '../../componets/checkout/UseSecureAuth';
+import { auth } from '../../componets/config/firebaseConfig';
 export default function Adminsidebar() {
 
   const { user, isAuthenticated, loading } = UseSecureAuth(auth);
